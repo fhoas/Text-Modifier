@@ -12,13 +12,20 @@ const OutputArea = () => {
     const decodeToMorse = (text) => {
       return morsify.decode(text);
     };
+  
+    const textStyle = () => {
+      switch (selectedModify) {
+        case "bold":
+          return "font-bold";
+        case "italic":
+          return "italic";
+        default:
+          return "text-bold";
+      }
+    };
 
   const processText = () => {
     switch (selectedModify) {
-      case "bold":
-        return <strong>{inputValue}</strong>;
-      case "italic":
-        return <em>{inputValue}</em>;
       case "morse-encode":
         return <span>{encodeToMorse(inputValue)}</span>;
       case "morse-decode":
@@ -30,7 +37,7 @@ const OutputArea = () => {
 
   return (
     <div>
-      <p className="text-lg border rounded border-black w-[600px] h-[500px] resize-none outline-none p-2">
+      <p className={`text-lg border rounded border-black w-[600px] h-[500px] resize-none outline-none p-2 ${textStyle()}`}>
         {processText()}
       </p>
     </div>

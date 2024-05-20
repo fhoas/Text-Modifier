@@ -12,10 +12,10 @@ const SelectModify = () => {
   }
 
   return (
-    <div className="flex gap-4">
+    <div className="flex gap-4 select-none">
       <button
-        className={`bg-black text-white p-4 border-2  rounded ${
-          selected === "bold" ? "border-blue-500" : "border-black"
+        className={`text-white p-2 rounded ${
+          selected === "bold" ? "bg-[#494949]" : "bg-black"
         }`}
         title="bold"
         onClick={handleClick}
@@ -23,8 +23,8 @@ const SelectModify = () => {
         Bold
       </button>
       <button
-        className={`bg-black text-white p-4 border-2 rounded ${
-          selected === "italic" ? "border-blue-500" : "border-black"
+        className={` text-white p-2 rounded ${
+          selected === "italic" ? "bg-[#494949]" : "bg-black"
         }`}
         title="italic"
         onClick={handleClick}
@@ -32,8 +32,8 @@ const SelectModify = () => {
         Italic
       </button>
       <button
-        className={`bg-black text-white p-4 border-2 rounded ${
-          selected === "morse" ? "border-blue-500" : "border-black"
+        className={`text-white p-2 rounded flex items-center justify-center gap-1 ${
+          selected === "morse-encode" ? "bg-[#494949]" : "bg-black"
         }`}
         title="morse-encode"
         onClick={handleClick}
@@ -42,8 +42,8 @@ const SelectModify = () => {
         <span className="text-sm">(encode)</span>
       </button>
       <button
-        className={`bg-black text-white p-4 border-2 rounded ${
-          selected === "morse" ? "border-blue-500" : "border-black"
+        className={` text-white p-2 rounded flex items-center justify-center gap-1 ${
+          selected === "morse-decode" ? "bg-[#494949]" : "bg-black"
         }`}
         title="morse-decode"
         onClick={handleClick}
